@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        ul{
+            font-size: 0; 
+            /*為了除掉每個inline-block之間會有的空白元素*/
+        }
+        li{
+            font-size: 16px;
+            display: inline-block;
+            /*
+            li本身是block
+            為了不要自動換行
+            */
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            margin: 10px;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;/*文字行距*/
+        }
+
+        .item20{
+            /*我現在想要讓20偏移顯示
+            但是位置跟空間不要受到任何影響*/
+            /*margin-left: 20px;
+            用此方法的話 會發現他擠到別人 影響整個位置
+            */
+            background-color: #c73e3e;
+            position: relative;
+
+            /*
+            relative 是 position 屬性的一種設定值，表示相對定位。
+            這種定位方式是根據「元素原本在頁面中的位置」，進行微調。
+
+            這個元素看起來被移動了，但它在文件流中的「位置」還是在那裡。
+
+            
+            */
+            left: 40px;
+            z-index: 1;
+        }
+        .item21{
+            position: relative;
+            /*
+            當兩個都有使用定位的時候，後面的程式碼會蓋住前面
+            那你還是想要20在21上面
+            就在20那邊的z-index調整成1(預設是0)
+            
+            z-index 是 CSS 中控制「元素堆疊順序（前後層級）*/
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="item1">1</li>
+        <li class="item2">2</li>
+        <li class="item3">3</li>
+        <li class="item4">4</li>
+        <li class="item5">5</li>
+        <li class="item6">6</li>
+        <li class="item7">7</li>
+        <li class="item8">8</li>
+        <li class="item9">9</li>
+        <li class="item10">10</li>
+        <li class="item11">11</li>
+        <li class="item12">12</li>
+        <li class="item13">13</li>
+        <li class="item14">14</li>
+        <li class="item15">15</li>
+        <li class="item16">16</li>
+        <li class="item17">17</li>
+        <li class="item18">18</li>
+        <li class="item19">19</li>
+        <li class="item20">20</li>
+        <li class="item21">21</li>
+        <li class="item22">22</li>
+        <li class="item23">23</li>
+        <li class="item24">24</li>
+        <li class="item25">25</li>
+        <li class="item26">26</li>
+        <li class="item27">27</li>
+        <li class="item28">28</li>
+        <li class="item29">29</li>
+        <li class="item30">30</li>
+        <li class="item31">31</li>
+        <li class="item32">32</li>
+        <li class="item33">33</li>
+        <li class="item34">34</li>
+        <li class="item35">35</li>
+        <li class="item36">36</li>
+        <li class="item37">37</li>
+        <li class="item38">38</li>
+        <li class="item39">39</li>
+        <li class="item40">40</li>
+        <li class="item41">41</li>
+        <li class="item42">42</li>
+        <li class="item43">43</li>
+        <li class="item44">44</li>
+        <li class="item45">45</li>
+        <li class="item46">46</li>
+        <li class="item47">47</li>
+        <li class="item48">48</li>
+        <li class="item49">49</li>
+        <li class="item50">50</li>
+    </ul>
+</body>
+</html>

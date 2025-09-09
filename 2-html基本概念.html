@@ -1,0 +1,75 @@
+
+HTML=Hyper Text Markup Language 超文本標記語言
+學習的資源有W3school、MDN
+
+標籤介紹
+<!DOCTYPE html> 
+<html lang="en"> <!--一個網頁的開始-->
+<head><!-- 頁面的頁首，大部分不是一般人可以看到的，多數來講是附加的東西（如：瀏覽器需要知道的東西、給搜尋引擎看的東西） -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><!-- 主要的內容區 -->
+    <h1> <!-- 設定網頁內容的標題，共有H1~H6可用 --> 
+    </h1>
+    <p><!-- 內文段落 -->
+
+        <ul> <!-- unorder list 無序清單(順序不重要時使用) -->
+            <li><!-- list item --></li>
+        </ul>
+
+        <ol> <!-- order list 有序清單(在意順序時使用，例如：步驟) -->
+            <lI>步驟一</lI>
+            <li>步驟二</li>
+            <li>步驟三</li>
+        </ol>
+    </p>
+
+    <!-- 超連結介紹 -->
+    <a href="">超連結</a>
+    <!-- href=hyper reference代表連到指定位置
+    target使用預設為_self，代表在同一頁面打開
+    設成_blank，代表在新芬頁打開鏈接 -->
+
+    <nav><!-- 導覽列，即網頁中最上面那一行 -->
+        <a href="">帳戶資訊</a>
+        <a href="">購物車</a>
+
+    </nav>
+
+    <!-- 同樣是粗體與斜體，但意義上會有些不同 -->
+     <!--語意上有跟網頁"強調"的意思  -->
+     <strong></strong>
+     <em></em>
+     <!-- 單純就是粗體與斜體 -->
+     <b></b>
+     <i></i>
+
+     <!-- 圖片介紹 -->
+    <img src="圖片位置" alt="告訴它這圖片是啥">
+    <!-- 只是告訴你我的圖片來源，所以不用</img>標起來 -->
+    <!-- src是從網頁本身的位置去找圖片在哪個資料夾裡(有分相對路徑/絕對路徑) -->
+    <!-- 如果圖片連不到，網頁上就會出現替代文字alt -->
+
+    <figure> <!-- 代表一個完整內容區塊 -->
+        <img src="圖片位置" alt="告訴它這圖片是啥">
+ 
+        <figcaption>
+            <!-- 使用此標籤會在圖片下多一個描述文字，可以藉由CSS來隱藏，主要是給搜尋引擎看得 -->
+        </figcaption>
+    </figure>
+    <!-- 用了figure的話，還可以使用<figcaption></figcaption> -->
+
+    <table>
+        <tr> <!-- 橫列 -->
+            <td>塞資料1</td> <!-- 直欄 -->
+            <td>塞資料2</td> <!-- 直欄 -->
+            <td>塞資料3</td> <!-- 直欄 -->
+        </tr>
+    </table>
+
+    <span>span</span>
+    <!--  是一個「沒有語意」的容器，可以用來包住部分文字或小範圍內容，方便你對那段內容加上 CSS 樣式。 -->
+</body>
+</html>

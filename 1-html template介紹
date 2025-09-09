@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--這是 文件類型宣告（Document Type Declaration）告訴瀏覽器這是一份 HTML5 文件。
+它有助於瀏覽器以正確的標準模式來解析網頁，而不是使用過時的兼容模式。 -->
+
+<html lang="en">
+<!-- 
+<html> 是整個 HTML 文件的根元素。
+屬性 lang="en"： 指明這個文件的主要語言是英文。
+這對於搜尋引擎優化（SEO）等都有幫助。
+如果你的網站內容主要是中文，建議改為 lang="zh-Hant"（繁體中文）或 lang="zh-Hans"（簡體中文） -->
+
+<head>
+<!--
+<head> 區塊用來包含網頁的metadata，不會直接顯示在頁面中，例如編碼、標題、樣式表、腳本等。 -->
+
+    <meta charset="UTF-8"> <!-- 設定網頁的字符編碼為 UTF-8，若不設定可能會造成亂碼 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 這是為了**響應式設計（Responsive Design）**設計的 meta 標籤。
+    width=device-width：讓網頁的寬度等於裝置的螢幕寬度。
+    initial-scale=1.0：初始縮放比例為 1，讓頁面在手機上顯示不被自動縮放。
+
+ -->
+    <title>Document</title>
+    <!-- 定義網頁的標題，會顯示在瀏覽器的分頁（tab）上 -->
+</head>
+
+<body>
+<!-- <body> 是網頁的主體內容區塊，裡面放的是使用者會看到的內容，比如文字、圖片、影片、按鈕等等 -->
+</body>
+</html>

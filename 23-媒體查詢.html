@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+        媒體查詢可以讓你針對「不同裝置大小、解析度、方向等條件」寫不同的 CSS 樣式，實現 響應式設計（Responsive Design）*/
+
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .amos{
+            width: 100%;
+            height: 300px;
+        }
+
+        .amos1{
+            background-color: #faa;
+        }
+
+        .amos2{
+            background-color: #aaf;
+        }
+
+        /*當我的媒體是怎麼樣的媒體
+        以及這個媒體有沒有設立什麼條件*/
+
+        /*ipad的1024*768*/
+        @media screen and (min-width: 768px){
+            /*當我的裝置是螢幕而且大於等於768*/
+            .amos{
+                width: 50%;
+                float: left;
+            }
+        }
+
+        /*常用寬度參考
+        手機	    max-width: 768px
+        平板	    min-width: 769px and max-width: 1024px
+        小型桌機	min-width: 1025px and max-width: 1200px
+        桌機（大）	min-width: 1201px*/
+        
+    </style>
+</head>
+<body>
+    
+
+    <div class="amos amos1">amos1</div>
+    <div class="amos amos2">amos2</div>
+</body>
+</html>

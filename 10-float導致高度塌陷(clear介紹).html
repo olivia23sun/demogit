@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            width: 960px; /*打wd*/
+            background-color: rgb(255, 202, 127);
+            margin: auto; /*希望能夠置中*/
+        }
+
+        .col{
+            width: 300px;
+            margin: 10px;
+            height: 200px;
+            background-color: #db0c0cba;
+            float: left; 
+            /*讓元素從正常垂直排列，變成浮起來「左對齊橫排擺放」
+            
+            父元素無法偵測到被 float 的子元素 → 導致高度變成 0 → 背景顏色消失
+            
+            解釋:
+            會發現父容器container的背景顏色會不見
+            原本container的高度是由內容所撐開，當我的內容設定成浮動後，浮起來之後就抓不到子層高度，造成父層高度塌陷
+            */
+        }
+
+        .clear-box{
+            clear: both; 
+            /*
+            用在不想讓元素貼在浮動元素旁邊時
+            設定此clear解決container會不見的問題
+            
+            clear: left; 
+            不貼在 float: left 元素的右邊
+            
+            clear: right; 
+            不貼在 float: right 元素的左邊 
+            
+            clear: both; 
+            不貼在任何浮動元素旁邊（最常用）
+            
+            */
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 打".XXX." 可以產出一個class=xxx的div -->
+    <div class="container">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="clear-box"></div>
+        <!-- 
+        
+        加上為它設定的CSS一起看
+        這個元素會：
+        
+            不再「貼」在前面的 float 元素旁邊
+            而是跑到 float 元素下方
+            因為它回到了正常文流中，所以它會幫助父層把高度「撐回來」
+            
+            所以 container 又能感覺到它有內容，就能正常顯示背景色、高度等效果了。
+        
+            -->
+    </div>
+</body>
+</html>

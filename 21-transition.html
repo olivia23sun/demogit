@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            display: inline-block; /*讓他可以設寬高*/
+            padding: 10px 20px;
+            background-color: #130202;
+            text-decoration: none;
+            color: #fff;
+            transition: all .5s 0s ease;
+            /*屬性 轉換時間 延遲執行時間 動畫速度曲線*/
+            /*上面:會花0.5秒的時間 讓背景變成藍色*/
+
+            /*如果你只想要背景顏色改變，不要文字也變色*/
+            /*transition: background-color .5s 0s ease;*/
+
+            /*分別設定每個屬性的動畫，可以這樣寫*/
+            /*transition: background-color .5s 0s ease, padding 1s 0s ease;*/
+            /*用逗號隔開*/
+        }
+
+        .btn:hover{
+            background-color: blue;
+            color: red;
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+<body>
+  
+    <a href="#" class="btn">送出</a>
+</body>
+</html>

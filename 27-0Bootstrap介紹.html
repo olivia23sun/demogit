@@ -1,0 +1,70 @@
+<!-- bootstrap一種前端CSS框架 -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+        .AA{background-color: #c85757;}
+        .BB{background-color: #39cc59;}
+        .CC{background-color: #8871dc;}
+    </style>
+  </head>
+  <body>
+
+    <!-- <div class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolores perspiciatis odit, expedita enim corrupti suscipit in nostrum vero fuga ducimus facere illum ea consequatur placeat odio ratione iusto minus.</p>
+    </div> -->
+
+    <!-- <div class="row">
+        <div class="col AA">A Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam sapiente sequi modi doloremque hic deserunt necessitatibus. Eveniet atque laborum, sapiente esse voluptate autem nisi, iste nam quae non praesentium?</div>
+        <div class="col BB">B Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate deleniti esse tenetur dolor mollitia quas laudantium autem, harum ratione et sunt aliquid delectus quod vel voluptas exercitationem itaque temporibus odio!</div>
+        <div class="col CC">C Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea optio labore molestiae facilis doloremque qui, non provident consequuntur. Pariatur fugit earum ipsa molestiae at perspiciatis repudiandae suscipit rem nulla aspernatur.</div>
+    </div> -->
+
+    <!--  佔欄數介紹 -->
+    <div class="row">
+
+        <div class="col-12 col-sm-12 col-md-6 AA">A Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam sapiente sequi modi doloremque hic deserunt necessitatibus. Eveniet atque laborum, sapiente esse voluptate autem nisi, iste nam quae non praesentium?</div>
+        
+        <div class="col-12 col-sm-6 col-md-6 BB">B Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate deleniti esse tenetur dolor mollitia quas laudantium autem, harum ratione et sunt aliquid delectus quod vel voluptas exercitationem itaque temporibus odio!</div>
+
+        <div class="col-12 col-sm-6 col-md-12 CC">C Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea optio labore molestiae facilis doloremque qui, non provident consequuntur. Pariatur fugit earum ipsa molestiae at perspiciatis repudiandae suscipit rem nulla aspernatur.</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<!-- 
+一些bootstrap基本常識
+有一些現成的class可以利用：
+
+.container-fluid 滿版寬
+.container 固定寬
+
+.row 列
+.col 行
+
+bootstrap把裝置分為五個尺寸
+.col    手機 直向(預設)：所有的裝置都會先採用這個設定
+
+在不同尺寸下想要有不同的版面設置，就可以增加裝置代號
+.col-sm 手機 橫向
+.col-md 平板 直向
+.col-lg 平板 橫向
+.col-xl 桌機
+
+後面可以接佔欄數(要佔掉幾個欄寬)
+預設是分為12個欄寬
+.col-佔欄數    手機 直向(預設)
+.col-sm-佔欄數 手機 橫向
+.col-md-佔欄數 平板 直向
+.col-lg-佔欄數 平板 橫向
+.col-xl-佔欄數 桌機
+-->

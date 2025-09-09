@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .wrap{
+            width: 100%;
+            max-width: 1400px; /*防止有些人用超級寬的螢幕*/
+            margin: auto;
+        }
+        .item{
+            background-color: #ffa;
+            margin: 0px 10px 20px;
+            padding: 10px;
+        }
+
+        @media screen and (min-width: 768px){
+            .wrap{
+                display: flex;
+            }
+            .item{
+                width: 33.333%;
+                /*
+                需要事先設定item寬度
+                
+                因為每個 .item 裡面有很多文字，加上有 padding 和 margin
+                所以如果整體寬度超出 .wrap 的最大寬度（1400px），就會造成「跑版」*/
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="item">
+            <h3>title</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur aliquid voluptatem id enim voluptates, ratione debitis saepe eum iusto, eligendi illum, modi odit accusantium repellendus ab possimus atque consectetur qui.</p>
+        </div>
+        <div class="item">
+            <h3>title</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur aliquid voluptatem id enim voluptates, ratione debitis saepe eum iusto, eligendi illum, modi odit accusantium repellendus ab possimus atque consectetur qui.</p>
+        </div>
+        <div class="item">
+            <h3>title</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur aliquid voluptatem id enim voluptates, ratione debitis saepe eum iusto, eligendi illum, modi odit accusantium repellendus ab possimus atque consectetur qui.</p>
+        </div>
+    </div>
+</body>
+</html>

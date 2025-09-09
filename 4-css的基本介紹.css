@@ -1,0 +1,33 @@
+*{
+    /*css reset*/
+    /*為什麼要做reset?因為每個瀏覽器對於html的預設樣式不一樣*/
+    /*預設樣式:例如一開始h1很大、清單不會靠邊*/
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    color: #fa0;
+    font-size: 60px;
+}
+
+nav{
+    background-color: #000;
+    text-align: center; /*置中*/
+    font-size: 0;
+}
+
+nav a{ 
+    /*nav a這個空格代表下一層的意思*/
+    /*意思是選擇所有**nav 元素裡面，不管隔幾層，只要是 <a> 的元素*/
+    color: blue;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: 20px;
+    transition: 0.5s; /*動畫的設定*/
+}
+
+nav a:hover{ /*這代表當連結被碰到的時候*/
+    background-color:#fa0;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .wrap{
+            width: 960px;
+            margin: auto;
+            background: #ccc;
+            display: flex;
+            flex-wrap: wrap;
+            /*
+            display: flex;
+            將容器變成「彈性盒子」容器，裡面的子項目（.item）會自動橫排（預設是橫向主軸）。
+            (內容「撐多寬就多寬」（沒有 width 限制的話)
+            flex-wrap: wrap;
+            子項目如果太多，會自動換行。如果沒加這行，子項目預設會擠在同一行，變得很窄。
+
+            (flex會自動調整每個物件的寬度，不會折行
+            如果今天想要它換行就必須這樣寫)
+            */
+        }
+        .item{
+            width: 300px;
+            margin: 0 10px 10px;
+            background-color: #ffa;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, officiis aperiam. Beatae et qui, repellendus id ducimus culpa tempore nisi, modi odio enim nesciunt! Sunt iure repellendus doloremque labore dolores.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolore voluptatum commodi autem id vitae soluta necessitatibus, cupiditate ut, assumenda deleniti at mollitia quam ipsum impedit laboriosam nemo. Dicta, reiciendis!</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus similique id et, fugit ab magnam ducimus corrupti facere atque perferendis beatae maxime debitis molestias quis, dicta dolorum minima. Dolor, tenetur!</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, officiis aperiam. Beatae et qui, repellendus id ducimus culpa tempore nisi, modi odio enim nesciunt! Sunt iure repellendus doloremque labore dolores.</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolore voluptatum commodi autem id vitae soluta necessitatibus, cupiditate ut, assumenda deleniti at mollitia quam ipsum impedit laboriosam nemo. Dicta, reiciendis!</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus similique id et, fugit ab magnam ducimus corrupti facere atque perferendis beatae maxime debitis molestias quis, dicta dolorum minima. Dolor, tenetur!</div>
+        
+    </div>
+</body>
+</html>

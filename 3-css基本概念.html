@@ -1,0 +1,44 @@
+CSS=cascading style sheets，中文翻譯層疊樣式表，是一種描述語言，用於定義網頁的樣式和布局
+
+如果沒有使用CSS去設計樣式，也可以透過標籤裡面個別的屬性去設定，例如<P>裡面可以使用style
+但這樣有一個缺點，如果要更改文字顏色，需要逐一修改，所以大部分不會這樣做(維護性太差)
+
+這種寫法是針對每一個標籤個別處理:inline style
+
+CSS會寫在<head>裡面，還有另一種方法是寫在css檔案中再使用link引入
+link需要寫在title的後面，否則可能會出問題(老舊的瀏覽器可能會造成解讀編碼錯誤，導致樣式亂碼)
+
+那又如何在不同的地方想要有不同的效果呢？
+可以自行分類，用class
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!--
+     rel 代表「relationship」，意思是這個連結的資源和 HTML 是什麼關係。
+    這裡設為 stylesheet，意思是「這是一份樣式表（CSS）」 -->
+
+    <style> /* 這是直接在head裡寫css */
+
+        p{
+            font-size: 50px;
+            background-color: #eee;
+        }
+
+        .spcial{
+            color: #f00;
+            /* CSS怎知道你在設定的樣式是針對class還是標籤呢? 在class的前面加一個「.」 */
+        }
+    </style>
+    
+</head>
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure dolorem ex recusandae distinctio quae doloribus possimus porro. Adipisci, blanditiis distinctio nesciunt nostrum consequuntur a maxime iure doloribus, explicabo ab aut!</p>
+    
+    <p class="special">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore numquam corrupti, perspiciatis veniam sequi iusto, eveniet minima praesentium consequuntur fugiat magnam sapiente natus aliquam delectus nobis sed suscipit? Quas, natus.</p>    
+</body>
+</html>

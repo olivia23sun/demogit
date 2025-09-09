@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <title>Document</title>
+    <style>
+        /*是以先設計手機顯示 再調整桌機*/
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img{
+            vertical-align: bottom;
+            /*img預設對齊基線 這樣圖片下面會有留白 不好看*/
+        }
+        
+        .item-group{
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+        }
+        .banner img{
+            width: 100%;
+        }
+
+        .title{
+            margin: 0 0 20px;
+            padding: 30px 10px;
+            background-color: #ccc;
+
+        }
+        .title h2{
+            text-align: center;
+            font-size: 46px;
+            margin: 0 10px 20px;
+        }
+        .title p{
+            text-align: center;
+            font-size: 22px;
+        }
+        .item{
+            margin:0 10px 40px;
+        }
+        .item .text h3{
+            font-size: 24px;
+            text-align: center;
+        }
+        .item .pic img{
+            width: 100%;
+        }
+
+        /* .item-group{
+            display: flex;
+        } */
+        .footer{
+            background-color: #333;
+            color: #aaa;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .service{
+            margin: 60px 0;
+            background-color: #ffa;
+        }
+
+        @media screen and (min-width:768px) {
+            .item-group{
+                display: flex;
+            }
+            .service .item{
+                display: flex;
+            }
+            .service .item .pic,
+            .service .item .text{
+                width: 50%;
+                margin: 0;
+            }
+
+            .service .item .text{
+                display: flex;
+                padding: 0 20px;
+                box-sizing: border-box;
+                flex-direction: column;
+                justify-content: center;
+                /* 主軸的對應方式(版面上下的置中) */
+            }
+        }
+
+        #menu_control{
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+            /*把這個勾選框隱藏掉的做法*/
+            /*
+            因為 #menu_control 是個勾選框，而且原本它在 .header 最前面，改成 position: absolute 後，瀏覽器不會為它保留空間，結果看起來好像它消失了（其實只是被定位在左上角 0,0，而且可能被其他元素擋住
+            */
+        }
+        .header{
+            height: 50px;
+            background-color: #ccc;
+            position: relative;
+        }
+        .logo{
+            width: 60px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        .logo img{
+            vertical-align: middle;
+        }
+
+        .menu_btn{
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            display: block; /*否則寬高設定無效*/
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+
+        .menu_btn span{
+            opacity: 0; /*隱藏文字*/
+        }
+
+        /*漢堡圖*/
+        .menu_btn::before{
+            content: '';
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: #aaa;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow:0px 8px 0px #aaa,
+                       0px -8px #aaa;/*要做另外兩根*/
+        }
+
+        nav{
+            width: 80%;
+            height: calc(100vh - 50px);
+            /*calc 計算機.  50px=header的高度*/
+            /*vh就是viewport的height(視窗高)*/
+            background-color: #fcc;
+            position: absolute;
+            top: 50px;
+            left: -100%; /*一開始不顯示nav 在外面準備*/
+            transition: .5s;
+        }
+
+        nav a{
+            display: block;
+            text-decoration: none;
+            color: rgb(2, 56, 64);
+            padding: 10px 20px;
+            border-bottom: 1px solid #aaa;
+        }
+
+        #menu_control:checked ~ .header nav{
+            /* 當 id 為 menu_control 的 checkbox 被勾選時，選取它後面同層的 .header 裡的 <nav> 元素，並套用樣式*/
+            left: 0;
+        }
+
+        @media screen and (min-width:768px) {
+            .menu_btn{display: none;}
+            .header{
+                display: flex;
+                justify-content: space-between;
+                /*必須配合flex使用*/
+                /*
+                space-between：
+                1-左邊第一個項目會緊貼容器的最左邊
+                2-右邊最後一個項目會緊貼容器的最右邊
+                3-中間的項目平均分配剩下的空間
+                4-項目與項目之間的距離相等，但最外側不會有額外空間*/
+                align-items: center; /*垂直置中*/
+            }
+            .logo{
+                
+            }
+            nav{
+                position: relative;
+                left: 0;
+                display: flex;
+                width: auto;
+                height: auto;
+                top: 0; /*原本設定top:50*/
+                background-color: transparent;/*透明*/
+            }
+
+            nav a{
+                border-bottom: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" name="" id="menu_control">
+
+    <div class="header">
+        <h1 class="logo">
+            <a href="#">
+                 <img src="https://picsum.photos/60/40/?random1" alt="">
+            </a>
+        </h1>
+       <label for="menu_control" class="menu_btn">
+            <span>選單</span>
+       </label>
+
+       <!-- 
+        label：主要目的是提供文字說明，讓使用者清楚 input 是做什麼的。
+        ->label 的點擊範圍 可以觸發對應的輸入框聚焦或切換。
+        -> 對於表單可用性（accessibility），label 非常重要，建議都加上。
+
+        -->
+        
+        <!-- 
+        span：它本身不會影響排版，不會換行，也不會有外觀，純粹是給你「包起來好操作」。
+         -->
+        <nav>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+        </nav>
+    </div>
+
+
+    <div class="banner">
+         <img src="https://picsum.photos/1400/500/?random20" alt="">
+    </div>
+
+    <div class="about">
+        <div class="wrap">
+            <!-- 可以利用wrap做固定寬 -->
+            <div class="title">
+                <h2>關於我們</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quod earum, odit corporis magnam non temporibus reprehenderit commodi consectetur quibusdam.</p>
+            </div>
+                <div class="item-group">
+                    <!-- 可以利用此設定所有的item -->
+                    <div class="item">
+                         <div class="pic">
+                            <img src="https://picsum.photos/300/200/?random1" alt="">
+                         </div>
+                         <div class="text">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nam beatae, at quas ea expedita cupiditate vel consequatur ipsa dolore? Sunt numquam odio, non accusamus fugit natus cupiditate itaque porro?</p>
+                         </div>
+                    </div>
+                    <div class="item">
+                         <div class="pic">
+                            <img src="https://picsum.photos/300/200/?random1" alt="">
+                         </div>
+                         <div class="text">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nam beatae, at quas ea expedita cupiditate vel consequatur ipsa dolore? Sunt numquam odio, non accusamus fugit natus cupiditate itaque porro?</p>
+                         </div>
+                    </div>
+                    <div class="item">
+                         <div class="pic">
+                            <img src="https://picsum.photos/300/200/?random1" alt="">
+                         </div>
+                         <div class="text">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nam beatae, at quas ea expedita cupiditate vel consequatur ipsa dolore? Sunt numquam odio, non accusamus fugit natus cupiditate itaque porro?</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service">
+        <div class="wrap">
+            <div class="item-group">
+                <div class="item">
+                         <div class="pic">
+                            <img src="https://picsum.photos/300/200/?random1" alt="">
+                         </div>
+                         <div class="text">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nam beatae, at quas ea expedita cupiditate vel consequatur ipsa dolore? Sunt numquam odio, non accusamus fugit natus cupiditate itaque porro?</p>
+                         </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="about">
+        <div class="wrap">
+            <!-- 可以利用wrap做固定寬 -->
+            <div class="title">
+                <h2>關於我們</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quod earum, odit corporis magnam non temporibus reprehenderit commodi consectetur quibusdam.</p>
+            </div>
+                <div class="item-group">
+                    <!-- 可以利用此設定所有的item -->
+                    <div class="item">
+                         <div class="pic">
+                            <img src="https://picsum.photos/300/200/?random15" alt="">
+                         </div>
+                         <div class="text">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nam beatae, at quas ea expedita cupiditate vel consequatur ipsa dolore? Sunt numquam odio, non accusamus fugit natus cupiditate itaque porro?</p>
+                         </div>
+                    </div>
+                    <div class="item">
+                         <div class="pic">
+                            <img src="https://picsum.photos/300/200/?random21" alt="">
+                         </div>
+                         <div class="text">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nam beatae, at quas ea expedita cupiditate vel consequatur ipsa dolore? Sunt numquam odio, non accusamus fugit natus cupiditate itaque porro?</p>
+                         </div>
+                    </div>
+                    
+                    <div class="item">
+                         <div class="pic">
+                            <img src="https://picsum.photos/300/200/?random12" alt="">
+                         </div>
+                         <div class="text">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nam beatae, at quas ea expedita cupiditate vel consequatur ipsa dolore? Sunt numquam odio, non accusamus fugit natus cupiditate itaque porro?</p>
+                         </div>
+                    </div>
+                    <div class="item">
+                         <div class="pic">
+                            <img src="https://picsum.photos/300/200/?random11" alt="">
+                         </div>
+                         <div class="text">
+                            <h3>title</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero nam beatae, at quas ea expedita cupiditate vel consequatur ipsa dolore? Sunt numquam odio, non accusamus fugit natus cupiditate itaque porro?</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; copyright 2025 by csscoke
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #f00;
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #f00;
+            animation: amos 2s; /*要跑哪個動畫 要跑多久*/
+            /* animation: 動畫名稱 播放時間 延遲執行時間 動畫速度曲線 播放次數 動畫播放方向 填充模式() 播放狀態(播放/暫停); */
+        }
+
+
+        /* keyframes動畫內容 */
+        @keyframes amos{
+            /*amos 動畫名稱*/
+            0%{
+                border-radius: 50%;
+            }
+            100%{
+                /* 100%關鍵影格的位置*/
+                border-radius: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+
+    <div class="box1"></div>
+</body>
+</html>

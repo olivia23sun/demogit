@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 300px;
+            background-color: red;
+            padding: 12px;
+            border: 5px solid gray;
+            box-sizing: border-box;
+            /*以往需要自行計算box model=margin + border + padding + width
+            
+            然後設定此行，設定的Width就會等於你的大小*/
+
+            /*
+            box-sizing 決定寬度與高度的計算方式
+            - border-box 我的寬/高設定值設定成邊框到邊框的尺寸
+            - content-box 我的寬/高設定值要設定給內容物*/
+
+            /*
+            好處:
+            如果臨時要更改border padding
+            不用重新計算大小 不會跑版面
+            ;*/
+        }
+    </style>
+</head>
+<body>
+    
+    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit corrupti obcaecati earum, veniam ipsum ducimus sit vitae eum in omnis aliquam fugit corporis magnam quod autem repellat optio vero. Consequuntur?</div>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+html {
+  line-height: 1.15; /* 修復動態內容在 Chrome, Safari, Opera 上的出現錯誤 */
+  -webkit-text-size-adjust: 100%; /* 防止 iOS Safari 調整字型大小 */
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block; /* 確保舊版瀏覽器也支援 <main> 元素 */
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent; /* 修復 iOS Safari 點擊 <a> 時背景樣式不一致 */
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/* 表單元件的跨平台一致性改善 */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* 修正 type="button" 在 Safari 的顯示問題 */
+button,
+select {
+  text-transform: none;
+}
+
+/* 修復 iOS Safari intrinsic padding */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/* 修正 Firefox 特定 input cursor 行為 */
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* 修復 Firefox 按鈕 gap 行為 */
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* 數字欄位外觀一致性 */
+details {
+  display: block;
+}
+
+/* 移除 <summary> 的默認游標 */
+summary {
+  display: list-item;
+}
+
+/* 修復多種瀏覽器的 <progress> 樣式 */
+progress {
+  vertical-align: baseline;
+}
+
+/* 修復 Chrome <template> 行為 */
+[hidden] {
+  display: none;
+}

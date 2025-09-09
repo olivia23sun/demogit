@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+
+        .header{
+            display: flex;
+            padding: 6px 10px;
+            background-color: rgb(226, 113, 113);
+        }
+
+        .header .logo{
+            display: inline-block;
+            padding: 6px 0;
+        }
+
+        .header nav{
+            text-align: right;
+            width: 100%;
+            /*
+            flex 預設會讓子元素「依內容撐開寬度」
+
+            如果你沒有幫 <nav> 設定 width: 100%：
+            <nav> 的寬度只會剛好包住裡面的文字
+            text-align: right; 只能在它「自己的範圍」內靠右，而不是整個 .header 靠右
+            */
+            font-size: 0; /*為了讓超連結之間不要有空隙*/
+        }
+
+        .header nav a{
+            font-size: 16px;
+            color: aliceblue;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 52px;
+            padding: 0 10px;
+        }
+
+        .header nav a:hover{
+            background-color: #fa8;
+        }
+
+        .banner img{
+            width: 100%;
+        }
+
+        .path{
+            display: flex;
+        }
+
+        .path li{
+            padding: 6px 8px;
+            position: relative;
+        }
+        .path a{
+            text-decoration: none;
+            color: rgba(139, 54, 250, 0.584);
+            font-size: 15px;
+        }
+
+        .path li + li::before {
+            /*
+            li + li
+            這是 CSS 的 相鄰兄弟選擇器，意思是：「選擇每個 li，前面有一個 li 的。」
+            也就是說，第一個 li 不會被選中，從第二個 li 開始才會被套用樣式。
+
+            ::before
+            這是 CSS 的 偽元素，意思是：「在這個元素的內容前面，插入一些東西。」*/
+
+            content:'/';
+            /*插入一個 / 字元當作分隔符號。*/
+            color: blue;
+            position: absolute;
+            left: 0;
+        }
+
+        .item h3{
+            font-size: 36px;
+            padding: 0 0 30px;
+        }
+        .wrap{
+            width: 960px;
+            margin: auto;
+        }
+
+        .about{
+            padding: 40px 0;
+        }
+
+        .about .wrap{
+            display: flex;
+        }
+
+        .about .wrap .item{
+            width: 300px;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        .about .item h3{
+            color: #000;
+            transition: .5s;
+        }
+
+        .about .item p{
+            color: #000;
+            transition: .5s;
+        }
+
+        .about .item:hover h3{
+            color: #fa0;
+        }
+        .about .item:hover p{
+            color: #fa0;
+        }
+
+
+        .about .item img{
+            border-radius: 50%; /*圖片圓角*/
+        }
+
+        .about > h2{
+            /* ">" 只會針對about底下第一層的H2*/
+            width: 100%;
+            /*因為前面wrap是flex*/
+            font-size: 42px;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .about > p{
+            width: 760px;
+            margin: auto;
+            padding: 20px 0 40px;
+            text-align: center;
+            /*文字對齊中間*/
+        }
+
+        .products{
+            background-color: #ee7979cf;
+        }
+
+        .products .wrap{
+            display: flex;
+        }
+
+        .products .item{
+            width: 50%;
+
+        }
+
+        .products .item img{
+            width: 100%;
+            vertical-align: bottom;
+            /*會發現圖片底下會有一個小間距
+            用此方法解決*/
+        }
+
+        .products .pic{
+
+        }
+
+        .products .text{
+            padding: 0 20px;
+            text-align: center;
+            
+            /*希望資料置中對齊*/
+            display: flex;
+            flex-direction: column; /*直排*/
+            justify-content: center;
+        }
+
+        .footer{
+            text-align: center;
+            background-color: aquamarine;
+            color: #888;
+            padding: 20px 0;
+        }
+
+        .service{
+            padding: 40px 0;
+            background-color: #f05050;
+        }
+
+        .service h2{
+            width: 960px;
+            text-align: center;
+            margin: auto;
+            font-size: 42px;
+            padding: 20px 0;
+        }
+
+        .service > p {
+            width: 960px;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 40px;
+        }
+
+        .service .wrap{
+            display: flex;
+        }
+
+        .service .item{
+            margin: 0 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .service .item h3{
+
+        }
+
+        .service .item p{
+
+        }
+
+        .service .item img{
+            width: 100%;
+            /*對齊item的寬度
+            因為wrap是flex，所以item的寬度等於內容寬度*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo"><img src="https://picsum.photos/80/40/?random1" alt="網站名稱"></a>
+        <nav>
+            <a href="#">關於我們</a>
+            <a href="#">最新消息</a>
+            <a href="#">產品</a>
+            <a href="#">服務</a>
+            <a href="#">聯絡我們</a>
+            <a href="#">網站地圖</a>
+        </nav>
+    </div>
+    
+    <div class="banner">
+         <img src="https://picsum.photos/1200/300/?random2" alt="">
+    </div>
+
+    <!-- 麵包屑(撒麵包屑記回家路徑) -->
+    <ul class="path">
+        <li><a href="#">首頁</a></li>
+        <li><a href="#">最新消息</a></li>
+        <li><a href="#">首頁</a></li>
+    </ul>
+
+    <div class="about">
+        <h2>關於我們</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam voluptatem vel doloremque perferendis optio facilis laboriosam quasi magni? Fuga, quasi!</p>
+        <div class="wrap">
+            <div class="item">
+                 <img src="https://picsum.photos/50/50/?random3" alt="">
+                 <h3>title</h3>
+                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, dolor vel in dolorum possimus vero voluptatum provident iusto ullam veniam totam atque, sed amet! Beatae voluptates adipisci eaque quae distinctio!</p>
+            </div>
+            <div class="item">
+                 <img src="https://picsum.photos/50/50/?random3" alt="">
+                 <h3>title</h3>
+                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, dolor vel in dolorum possimus vero voluptatum provident iusto ullam veniam totam atque, sed amet! Beatae voluptates adipisci eaque quae distinctio!</p>
+            </div>
+            <div class="item">
+                 <img src="https://picsum.photos/50/50/?random3" alt="">
+                 <h3>title</h3>
+                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, dolor vel in dolorum possimus vero voluptatum provident iusto ullam veniam totam atque, sed amet! Beatae voluptates adipisci eaque quae distinctio!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="wrap">
+            <div class="item pic">
+                <!-- 設了兩個class名稱 item和pic -->
+                 <img src="https://picsum.photos/300/200/?random3" alt="">
+            </div>
+            <div class="item text">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat maiores iure corporis officia repellendus placeat velit vero facilis culpa doloremque quis at nihil, ab molestiae autem modi magnam temporibus reiciendis deleniti ipsum sit nisi illo quam laborum. Quos architecto voluptatibus sint delectus facilis veritatis, placeat eaque at aperiam eos ratione.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="service">
+        <h2>服務項目</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, officia!</p>
+        <div class="wrap">
+            <div class="item">
+                 <img src="https://picsum.photos/300/200/?random4" alt="">
+                 <h3>title</h3>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nemo officiis ipsa vel culpa ullam placeat voluptatibus. Pariatur.</p>
+            </div>
+            <div class="item">
+                 <img src="https://picsum.photos/300/200/?random4" alt="">
+                 <h3>title</h3>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nemo officiis ipsa vel culpa ullam placeat voluptatibus. Pariatur.</p>
+            </div>
+            <div class="item">
+                 <img src="https://picsum.photos/300/200/?random4" alt="">
+                 <h3>title</h3>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nemo officiis ipsa vel culpa ullam placeat voluptatibus. Pariatur.</p>
+            </div>
+            <div class="item">
+                 <img src="https://picsum.photos/300/200/?random4" alt="">
+                 <h3>title</h3>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nemo officiis ipsa vel culpa ullam placeat voluptatibus. Pariatur.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; copyright 2025 by csscoke
+    </div>
+</body>
+</html>

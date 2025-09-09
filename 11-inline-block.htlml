@@ -1,0 +1,18 @@
+網頁中的兩大主角
+
+CSS中的display設定
+
+1.inline 它會跟大家排在一起 例如:超連結
+2.block 不管多寬就是會占掉一整列的空間 例如:H1標題
+3.inline-block
+
+inline
+不可以設定寬跟高，只佔它內容的寬度
+
+block
+可以設定寬跟高
+
+inline-block（內聯區塊）
+不會換行（像 inline）
+可以設定寬高（像 block）
+很適合拿來做按鈕、圖片選單、小元件

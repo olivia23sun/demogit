@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inline-block</title>
+
+    <style>
+        .menu{
+            background-color: rgb(255, 132, 0);
+            text-align: center; /*置中*/
+            font-size: 0;
+            /*把這行移除的話，會發現每個link中間會有小空格，那是因為每個<a>之間會有空白字元
+            
+            會發現如果<a>不要換行，空白就會消失
+            因此該空白字元存在於div中，大小被設為0的話，link之間的空白就會消失了    */
+        }
+
+        .menu a{
+            text-decoration: none; /*把原本超連結的底線去除*/
+            background-color: red;
+            padding: 5px;
+            font-size: 15px;
+            display: inline-block; 
+            /*原本的a屬於inline
+            這樣不能設定它的高度，它高度是由內容決定*/
+        }
+
+        .menu a:hover{
+            background-color: black;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="menu">
+        <a href="a">link</a>
+        <a href="a">link</a>
+        <a href="a">link</a>
+        <a href="a">link</a>
+        <a href="a">link</a>
+        <a href="a">link</a>
+    </div>    
+</body>
+</html>

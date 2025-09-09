@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .controller{
+            display: block;
+            padding: 6px 10px;
+            background-color: #000;
+            color: #fff;
+            width: 300px;
+            text-decoration: none;
+        }
+
+        .text{
+            width: 280px;
+            padding: 20px;
+            background-color: #ccc;
+        }
+        .text.x{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#" class="controller">開/關</a>
+    <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore sequi reiciendis, dolorem deleniti ad rerum cupiditate in ab nam. Animi nobis nihil totam et laudantium! Harum eligendi quae atque iusto?</div>
+
+<script src="js/jquery.min.js"></script>
+<script type="text/JavaScript">
+    $(document).ready(function(){ 
+
+        $(".controller").click(function(){
+            // $(".text").toggle();
+
+            // 利用CSS控制
+            $(".text").toggleClass("x");
+            // 自動幫你檢查 你的東西有沒有這個class
+            // 如果有 幫你拿掉 ， 如果沒有 幫你補上
+        })
+
+    })
+</script>
+
+</body>
+</html>

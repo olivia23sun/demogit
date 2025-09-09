@@ -1,0 +1,10 @@
+GSAP，全稱GreenStock Animation Platform，
+它是一套專門處理網頁動畫和特效的JS函式庫，
+引入插件後，我們便可以使用一些簡單的函式來做出精美的進階的動畫。
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+
+https://gsap.com/resources/get-started/
+
+codepen也有可以動畫可以直接看直接選
